@@ -1,0 +1,107 @@
+AWS file
+#user data script for ubuntu
+
+#!/bin/bash
+yes|sudo apt update
+yes|sudo apt install apache2
+sudo echo "<h1>Server Details</h1><p><strong>Hostname:</strong>
+$(hostname)</p><p><strong>IP Address:</strong>$(hostname -l |cut-d" " -
+f1)</p>">/var/www/html/index.html
+sudo systemctl restart apache2
+
+$ tail -3000 /var/log/cloud-init-output.log #return the log if user data not working
+
+to login in to SSH
+cd f:/aws/mar2024
+
+
+LINUX command for AWS cloud
+sudo su - use this command to be super user
+yum install httpd - command to install wevserver (part of apache file)
+service httpd start - after instaltion, use this command to start the httpd module
+chkconfig httpd on - to initiate the machine
+history - to check privious command list
+vi /var/www/html/index - to open custum web editor page
+
+Switch yourself as Admin user
+#sudo su
+
+To install Apahae WebServices in our EC2 Instance
+#yum install httpd -y
+
+To Start the WebService in EC2 Instance
+#service httpd start
+
+To add the WebService in Startup
+#chkconfig httpd on
+
+To Add a custome PAge on your Web Server
+#vi /var/www/html/index.html
+
+Press i to enter in to insert Mode
+
+<html>
+<head> <title> My Web Server </title> </head>
+<body bgcolor=yellow>
+<h1> iTrainU Trainning Institute </h1>
+<h1> Nisha Chauhan </h1>
+</body>
+</html>
+
+Command To add volume to linux server ec2 instance
+# lsblk
+# mkfs -t ext4 /dev/xvdb
+# mkdir learning
+# mount /dev/xvdb learning
+# lsblk
+
+Press ESC to enter in to Command Mode
+type the below Command
+:wq and Press Enter
+
+This command will save and Close  your File
+
+#!/bin/bash
+sudo yum update -y
+sudo yum install -y python3
+export APP_NAME=network_app
+export LAB_ID=18d26286-5a1d-4374-94f3-cd09a99e0886
+export PROVISION_BUCKET_NAME=pu-base-buckets-v1-provision-lab
+EC2_FILES="lab app.py requirements.txt templates/index.html static/jquery-3.5.1.min.js static/images/fullpic.png static/images/loader.gif static/images/right.png static/images/subnett.png static/images/vpc.png static/images/wrong.png"
+
+mkdir /home/ec2-user/$APP_NAME
+mkdir /home/ec2-user/$APP_NAME/templates
+
+for file_ in $EC2_FILES
+do
+  aws s3 cp s3://$PROVISION_BUCKET_NAME/$LAB_ID/$APP_NAME/$file_ /home/ec2-user/$APP_NAME/$file_
+done
+
+mv /home/ec2-user/$APP_NAME/lab /etc/rc.d/init.d/
+chmod +x /etc/rc.d/init.d/lab
+chkconfig lab on
+
+sudo chown -R ec2-user:ec2-user /home/ec2-user/$APP_NAME
+sudo pip3 install -r /home/ec2-user/$APP_NAME/requirements.txt
+
+service lab start
+
+ebs attach and extend in ubuntu
+
+#lsblk - to see file 
+#sudo fdisk -l - to see disk size
+#file -s /dev/xvdk - check file system
+#sudo mkfs -t xfs /dev/xvdk -make file online
+#sudo mkdir /myvolume - create file 'myvolume' to mount EBS
+#sudo mount /dev/xvdk /myvolume - mount the data
+# ls- lrt - check file
+#df -h to check actually the ebs is mounted
+## increase volume in aws cosolw
+#sudo xfs_growfs -d /dev/xvdk - to add extend ebs volume (only xfs file system)
+##sudo resize2fs /dev/xvdf resize2fs command only for ext3 and ext4 filesystems.
+
+Terraform user login  
+https://767398029055.signin.aws.amazon.com/console
+idname - teraform_user, password- Man@1234
+
+
