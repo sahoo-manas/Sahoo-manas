@@ -1,0 +1,158 @@
+Get company from watchlist
+
+SELECT "watch_list_webappentity"."company_id", "penseive_company"."name", "penseive_company"."url" FROM "watch_list_webappentity" LEFT OUTER JOIN "penseive_company" ON ("watch_list_webappentity"."company_id" = "penseive_company"."id") WHERE "watch_list_webappentity"."watch_list_id" = 70368
+
+##########isin number
+company_profile_isinumber
+########DUns number#####
+company_profile_dunsnumber
+##########Profile ticker#########
+company_profile_companyticker
+##################
+SELECT "watch_list_webappentity"."company_id",
+       "penseive_company"."name",
+       "penseive_company"."url",
+       "company_profile_isinumber"."isin"
+FROM "watch_list_webappentity"
+LEFT OUTER JOIN "penseive_company" ON ("watch_list_webappentity"."company_id" = "penseive_company"."id")
+LEFT OUTER JOIN "company_profile_isinumber" ON ("penseive_company"."id" = "company_profile_isinumber"."company_id")
+WHERE "watch_list_webappentity"."watch_list_id" = 58146
+
+#######################
+SEARCH KEYWORD
+SELECT id,
+       phrase_text
+FROM brief_searchkeyword
+WHERE (show_for_client_id = 201671
+       AND is_active = TRUE
+       AND phrase_text LIKE '%twitter.com%');
+*****************************************************
+
+
+CSTUM TRIGGER
+
+SELECT ct.id, ct.name, ct.created_on, ct.created_by_id, ct.rule, us.email, us.is_active FROM penseive_customtrigger AS ct INNER JOIN auth_user AS us ON (ct.created_by_id = us.id) WHERE ct.active = TRUE;
+
+select name, rule, created_on, active from penseive_customtrigger where created_by_id = 20621
+
+SELECT count(*)
+FROM brief_contentsource
+WHERE channel_id = 17
+  AND country_id in (97,
+                     3,
+                     38)
+  AND active = TRUE
+********************************************
+--ARRY query
+SELECT id,
+       name,
+       average_count_all,
+       aliases
+FROM penseive_company
+WHERE (Active = TRUE
+       AND 1 = all(company_categories) --
+ --    AND company_categories [1] = 1 
+       AND average_count_all>=1000)
+ORDER BY average_count_all DESC
+LIMIT 10
+
+--where 92 <= all (round_scores); Only show records where 92 is lower or equal to ALL the scores:
+
+
+
+
+********************************************************
+ * Works with PostgreSQL, MySQL, Oracle, MSSQL, SQLite, Vertica, Firebird and Snowflake
+  * Smart completions (except SQLite)
+  * Run SQL Queries  `CTRL+e, CTRL+e`
+  * View table description  `CTRL+e, CTRL+d`
+  * Show table records  `CTRL+e, CTRL+s`
+  * Show explain plan for queries  `CTRL+e, CTRL+x`
+  * Formatting SQL Queries  `CTRL+e, CTRL+b`
+  * View Queries history  `CTRL+e, CTRL+h`
+  * Save queries  `CTRL+e, CTRL+q`
+  * List and Run saved queries  `CTRL+e, CTRL+l`
+  * Remove saved queries  `CTRL+e, CTRL+r`
+  * Threading support to prevent lockups
+  * Query timeout (kill thread if query takes too long)
+****************************************************************************
+
+The query for Content Type is blank OR  Custom Tag is blank OR published by company is blank 
+ 
+select rf.id from publications_rssfeed as rf
+inner join
+publications_rssfeed_content_types rfct ON (rf.id = rfct.rssfeed_id)
+LEFT OUTER JOIN
+publications_rssfeed_published_by_company rfpbc ON (rf.id = rfpbc.rssfeed_id)
+LEFT OUTER JOIN
+"publications_rssfeed_custom_tags" rfst ON ("rf"."id" = "rfst"."rssfeed_id")
+WHERE (rf.active = True AND rf.show_for_client_id = 102781 AND rfct.contenttype_id =  NULL OR rfpbc.company_id = NULL
+       OR rfst."customtag_id" = NULL);
+********
+SELECT id,
+  show_for_client_id,
+       title,
+       web_url,
+       active
+FROM publications_rssfeed
+WHERE web_url like any(array['%digitimes.com.tw%', '%cnyes.com%', '%udn.com%'])
+
+WHERE content type NULL
+
+select rf.id from publications_rssfeed as rf
+inner join
+publications_rssfeed_content_types rfct ON (rf.id = rfct.rssfeed_id)
+WHERE (rf.active = True AND rf.show_for_client_id = 102781 AND rfct.contenttype_id =  NULL);
+
+WHERE PUBLISHED BY COMPANY NULL
+
+select rf.id from publications_rssfeed as rf
+inner join
+publications_rssfeed_published_by_company rfpbc ON (rf.id = rfpbc.rssfeed_id)
+WHERE (rf.active = True AND rf.show_for_client_id = 102781 AND rfpbc.company_id = NULL);
+
+WHERE CUSTOM TAG NULL
+
+select rf.id from publications_rssfeed as rf
+inner join
+"publications_rssfeed_custom_tags" rfst ON ("rf"."id" = "rfst"."rssfeed_id")
+WHERE (rf.active = True AND rf.show_for_client_id = 102781 AND rfst."customtag_id" = NULL);
+
+******************************************************************************
+
+SELECT rf.id,
+       rf.web_url,
+       pc.name
+FROM publications_rssfeed AS rf
+left outer JOIN publications_rssfeed_published_by_company rfpbc ON (rf.id = rfpbc.rssfeed_id)
+left join
+penseive_company pc on (rfpbc.company_id = pc.id)
+WHERE (rf.active = TRUE
+       AND rf.show_for_client_id = 201671
+      AND rfpbc.company_id is NOT NULL)
+       limit 50;
+
+SELECT "watch_list_webappentity"."company_id",
+       "penseive_company"."name",
+       "penseive_company"."url"
+FROM "watch_list_webappentity"
+LEFT OUTER JOIN "penseive_company" ON ("watch_list_webappentity"."company_id" = "penseive_company"."id")
+WHERE "watch_list_webappentity"."watch_list_id" = 70368
+
+##ARRAY FILTER IN POSTGRESQL####
+SELECT count(*)
+FROM penseive_company
+WHERE Active = TRUE
+  AND '1' = any(categories); --filter categories are '1'
+
+SELECT
+  cart_id,
+  products
+FROM
+  shopping_cart
+WHERE
+  products  @> ARRAY['product_a', 'product_b'];
+
+Here I am using the ‘@>’ operator, which stands for ‘contains’. It can be read as follows:
+
+“The product array contains the array [‘product_a’, ‘product_b’].”
