@@ -156,3 +156,611 @@ WHERE
 Here I am using the ‘@>’ operator, which stands for ‘contains’. It can be read as follows:
 
 “The product array contains the array [‘product_a’, ‘product_b’].”
+
+Coped from Lenove laptop
+
+https://drive.google.com/drive/u/1/folders/1H_OXL6sAqotr_kfI3LydF9bzrFsJw6OS - downlord all class file
+=================================================
+https://www.awseducate.com/student/s/
+=================================================
+
+
+
+
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
+===========================================================
+Windows MAchine  Default USername :  Administrator
+pw: gm*6cC01Ag(up5IUv.(UDhda8.6Dmjyw
+
+<html>
+<head> <title> My Web Server </title> </head>
+<body bgcolor=yellow>
+<h1> iTrainU Trainning Institute </h1>
+<h1> Nisha Chauhan </h1>
+</body>
+</html>
+
+https://www.ktexperts.com/copy-ebs-volume-snapshot-to-another-region-and-attach-to-ec2-instance/
+
+https://contify-product.postman.co/workspace/Contify~45cee68a-6768-479c-8cbd-05ac6fb30fda/request/27156879-1ff3ecd8-9f81-4298-98dd-9e6003ca02b4?tab=params
+
+https://contify-product.postman.co/workspace/Contify~45cee68a-6768-479c-8cbd-05ac6fb30fda/request/24002193-92aa79d4-cdfe-4e68-a678-df9886177fb6?tab=params
+
+Infosys - Press release
+https://api.contify.com/v3/insights?company_id=2115&content_type_id=24&start_date=2024-04-10&end_date=2024-04-17
+Fuvetran- Blog
+https://api.contify.com/v3/insights?company_id=361063&content_type_id=7&start_date=2024-04-10&end_date=2024-04-17
+
+https://colab.research.google.com/drive/1HcbmhfTZBash8bFxnexf5DjLjKu3vKvw#scrollTo=UOaP_PG50Lez
+
+================================================
+api key - 51b381ef379a4fd1a05bc1eec737c0c1
+
+https://newsapi.org/v2/everything?q=tesla&from=2024-01-01&sortBy=publishedAt&apiKey=51b381ef379a4fd1a05bc1eec737c0c1
+
+https://newsapi.org/v2/everything?q=(sport AND Broadcast OR broadcaster OR Distribution OR partnership OR Media OR rights OR agreements OR Streaming OR TV OR DFB OR Channels OR launch OR Livepaket OR Live OR coverage OR Network OR signs)&from=2024-01-25&sortBy=publishedAt&apiKey=51b381ef379a4fd1a05bc1eec737c0c1
+
+https://newsapi.org/
+
+((sports OR Media) AND ("partnership" OR "Media rights" OR "Rights agreements" OR  "Streaming TV" OR "Broadcast rights" OR "Acquired rights" OR 
+"Commercial broadcaster" OR "TV right" OR "Broadcast" OR "tv deal"))
+
+
+allintext:((sport) AND (Broadcast OR broadcaster OR Distribution OR partnership OR Media OR rights OR agreements OR Streaming OR TV OR DFB OR Channels OR launch OR Livepaket OR Live OR coverage OR Network OR signs))
+
+allintext:(sport AND MEDIENRECHTVERTRÄGE OR Partenariat OR "Diffuserons sur" OR "Sýningarréttinn að" OR "Transmitirá la" OR "Übertragungsrechte" OR "Vertragspartnerschaft" OR "αθλητικές διοργανώσεις" OR "Sikret nye rettigheter" OR "Kooperieren bei")
+
+
+https://newsapi.org/v2/everything?q=((sport) AND (Broadcast OR broadcaster OR Distribution OR partnership OR Media OR rights OR agreements OR Streaming OR TV OR DFB OR Channels OR launch OR Livepaket OR Live OR coverage OR Network OR signs))&from=2024-01-25&to=2024-02-01&sortBy=popularity&sources=google-news-in&category=business&apiKey=51b381ef379a4fd1a05bc1eec737c0c1
+
+https://newsapi.org/v2/everything?q=bitcoin&apiKey=51b381ef379a4fd1a05bc1eec737c0c1
+
+SELECT rss_feed_id, COUNT(uuid) AS count FROM mi_story_008 WHERE rss_feed_id = ANY('{250347,297930,553485,1115502,297928,128807,286920,23476,138501,297830,296148,131389,262183,297921,318231,148870,297929,167832,69174,283920,103288,293269,1046746,794493,69177,161468,344954,69180,133383,129432,57824,263050,324441,140216,69132,1049184,57106,155782,222937,134105,330461,294533,1047317,459082,156045,29124548,57933,57025,57069,57297,57074,57780,57771,57676,56727,57691,57665,57078,57560,57511,}') AND creation_date BETWEEN '2023-08-10T10:42:27Z' AND '2024-02-06T10:42:27Z' GROUP BY rss_feed_id;	
+
+SELECT *
+FROM story_manualaction
+WHERE modified_on >= '2024-02-24T00:00:00'
+  AND modified_on <='2024-02-26T00:00:00'
+LIMIT 3
+
+
+SELECT *
+FROM story_manualaction
+WHERE category like 'company'
+AND modified_on >= '2024-02-24T00:00:00'
+ORDER BY modified_on;
+
+SELECT *
+FROM story_manualaction
+WHERE category = 'company'
+  AND modified_on >= '2024-02-01T00:00:00'
+  AND modified_on <= '2024-02-25T23:59:59';
+===========================================================
+WITH first_data AS
+  (SELECT title, --web_url,
+ frequency AS freq,
+ DOMAIN --dense_rank ()OVER (
+ -- ORDER BY frequency ASC) AS rank
+
+   FROM rss_feed_rssfeedsource
+   WHERE web_url like ANY (array[
+                                  '%hindustantimes.com%',
+                                  '%hindutamil.in%'])
+     AND state = 0
+   ORDER BY title)
+SELECT DOMAIN,
+       min(freq) --min(rank)
+FROM first_data
+GROUP BY DOMAIN
+ORDER BY DOMAIN
+
+--start from 1113
+
+SELECT p.name,
+       p.id
+FROM penseive_company AS p
+JOIN watch_list_webappentity AS w ON (p.id = w.company_id)
+WHERE w.watch_list_id = 73673
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+select *
+from watch_list_webappentity
+where id  = 836976
+
+
+select p.name, p.id, p.url
+from penseive_company as p
+join
+watch_list_webappentity as w on (p.id = w.company_id)
+where w.watch_list_id  = 3458
+
+
+SELECT p.name,
+       p.id,
+       p.url,
+       i.isin
+FROM penseive_company AS p
+JOIN watch_list_webappentity AS w ON (p.id = w.company_id)
+JOIN company_profile_isinumber AS i ON (p.id = i.company_id)
+WHERE w.watch_list_id = 58146
+
+SELECT table_name FROM information_schema.tables WHERE table_name LIKE '%profile%';
+
+SELECT table_name FROM information_schema.tables;
+
+SELECT w.id,
+       w.name,
+       c.country_id,
+       b.value,
+       b.quarter
+FROM penseive_company AS w
+JOIN penseive_companyrevenue AS b ON (w.id = b.company_id)
+JOIN penseive_branch AS c ON (w.id = c.company_id)
+WHERE b.value IS NOT NULL
+  AND c.country_id = 38
+
+=============
+SELECT id,
+       name,
+       domain_url,
+       channel_id
+FROM brief_contentsource
+WHERE published_by_company_id IS NULL
+  AND domain_url like ANY (array[])
+  
+SELECT id,
+       name,
+       domain_url
+FROM brief_contentsource
+WHERE Active = TRUE
+  AND is_loadable = TRUE
+  AND domain_url like ANY (array[])
+  
+company_profile_isinumber
+company_profile_dunsnumber
+company_profile_companyticker
+company_profile_branch
+company_profile_companyprofile - company profile table
+
+type = 2 - private
+type = 1 - Public
+type = 3 - Government
+
+where type not null and active = true
+
+
+select * from tracker_employeesalary
+
+select *
+from rss_feed_rssfeedsource
+where id  = 1173395
+
+join
+where id = 445387
+
+
+select *
+from rss_feed_rssfeedsource
+where id  = 1173395
+
+
+select a.id,a.title
+from rss_feed_rssfeedsource a
+inner join
+rss_feed_rssfeedstandardtag as b on (a.id = b.rss_source_id)
+join
+
+where a.id = 1173395
+
+SELECT *
+FROM brief_contentsource
+where id = 1041263
+
+SELECT CONCAT('https://sites.contify.com/admin/rss_feed/rssfeedsource/',a.id) as rss_id,
+       a.title
+FROM rss_feed_rssfeedsource a
+INNER JOIN rss_feed_rssfeedstandardtag AS b ON (a.id = b.rss_source_id)
+JOIN brief_contentsource AS c ON (b.content_source_id = c.id)
+WHERE a.state = 0
+  AND c.active = False
+  
+
+SELECT CONCAT('https://sites.contify.com/admin/rss_feed/rssfeedsource/',a.id) as rss_id,
+		c.id as CS_ID,
+        c.domain_url as CS_domain,
+       a.web_url as rss_web_url
+FROM rss_feed_rssfeedsource a
+INNER JOIN rss_feed_rssfeedstandardtag AS b ON (a.id = b.rss_source_id)
+JOIN brief_contentsource AS c ON (b.content_source_id = c.id)
+WHERE a.state = 0
+  AND b.content_source_id is not null
+  
+SELECT id,
+       name,
+       domain_url,
+       published_by_company_id,
+       Active,
+       is_loadable,
+       channel_id
+FROM brief_contentsource
+WHERE domain_url SIMILAR TO 'sase.vmware.com%|intelex.com%|wolterskluwer.com%|pega.com%|zest.ai%'
+
+mis db
+SELECT story_admin_link,
+       modified_on,
+       by_user,
+       category,
+       added,
+       removed
+FROM story_manualaction
+WHERE client = 'Contify Central'
+  AND (modified_on >= '2024-08-31T00:00:00'
+       AND modified_on <='2024-09-07T00:00:00')
+       
+--category like 'content_type_id'
+
+SELECT count(story_admin_link), added, removed, category
+FROM story_manualaction
+WHERE category = 'companies' AND (modified_on >= '2024-06-28T00:00:00'
+       AND modified_on <='2024-07-05T00:00:00') 
+group by category,added, removed;
+
+SELECT story_admin_link, removed, added,category
+FROM story_manualaction
+WHERE category in ('companies', 'published_by_companies') AND (modified_on >= '2024-01-01T00:00:00'
+       AND modified_on <='2024-07-05T00:00:00')
+group by category, removed, story_admin_link, added
+
+SELECT removed,
+       count(removed)
+FROM story_manualaction
+WHERE category in ('companies')
+  AND added IS NOT NULL
+  AND (modified_on >= '2024-07-23T00:00:00'
+       AND modified_on <='2024-07-23T23:59:59')
+GROUP BY removed
+ORDER BY count(removed) DESC;
+
+#where CT = event
+SELECT CONCAT('https://sites.contify.com/admin/rss_feed/rssfeedsource/', a.id) AS rss_id,
+       a.web_url,
+       b.content_type_id
+FROM rss_feed_rssfeedsource a
+JOIN rss_feed_rssfeedstandardtag b ON (a.id = b.rss_source_id)
+WHERE b.content_type_id = 12
+  AND a.state = 0
+
+==================================================================
+About Panda, data analysis
+data.head()
+data.shape()
+data.info()
+data.describe()
+
+# Print the values of homelessness
+print(homelessness.values)
+
+# Print the column index of homelessness
+print(homelessness.columns)
+
+# Print the row index of homelessness
+print(homelessness.index)
+
+one column	df.sort_values("breed")
+multiple columns	df.sort_values(["breed", "weight_kg"])
+
+# Sort homelessness by descending family members
+homelessness_fam = homelessness.sort_values("family_members", ascending=False)
+
+# Print the top few rows
+print(homelessness_fam.head())
+
+# Sort homelessness by region, then descending family members
+homelessness_reg_fam = homelessness.sort_values(["region","family_members"],ascending = [True, False])
+
+# Print the top few rows
+print(homelessness_reg_fam.head())
+# Select the state and family_members columns
+state_fam = homelessness[["state","family_members"]]
+
+# Print the head of the result
+print(state_fam.head())
+
+dogs[dogs["height_cm"] > 60]
+dogs[dogs["color"] == "tan"]
+
+dogs[(dogs["height_cm"] > 60) & (dogs["color"] == "tan")]
+
+# Filter for rows where region is Mountain
+mountain_reg = homelessness[homelessness["region"] == "Mountain"]
+
+# See the result
+print(mountain_reg)
+colors = ["brown", "black", "tan"]
+condition = dogs["color"].isin(colors)
+dogs[condition]
+# Add total col as sum of individuals and family_members
+homelessness["total"] = homelessness["individuals"] + homelessness["family_members"]
+
+# Add p_individuals col as proportion of total that are individuals
+homelessness["p_individuals"] = homelessness["individuals"] / homelessness["total"]
+
+import itertools as it, pandas as pd
+df = pd.DataFrame({1:['a','b','c','d'],2:['e','f','g','h']})
+sorted(it.chain(*df.values))
+# -> ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+* Can contify provide ISIN instead of contify ID, why does it change randomly
+  * Filters added by contify at their end?
+  * How does Contify identify preview from news article HTML scraping? Can they give us the marker or complete content body?
+  
+  company_profile_branch country_id
+company_profile_id
+===========================================================
+import copy
+import requests
+from datetime import datetime, timedelta
+
+
+def fetch_insights(headers, query_params, p=1):
+    params = copy.deepcopy(query_params)
+    params["page"] = p
+    response = requests.get(
+        "https://api.contify.com/v3/insights", headers=headers, params=params
+    )
+    results = dict()
+    if response.ok:
+        results = response.json()
+    return results
+
+
+headers = {
+    "APPID": "cbd62098",
+    "APPSECRET": "3418bc4f4897637227b1a489b6ca8ff4"
+}
+
+
+req_params = {
+    "start_date": (datetime.now().replace(day=10, month=5, year=2023)).strftime("%Y-%m-%d"),
+    "end_date": (datetime.now().replace(day=8, month=6, year=2023)).strftime("%Y-%m-%d"),
+    "watchlist_id": "58146",
+    "advanced_query":'source:(4 OR 6 OR 14 OR 56 OR 175 OR 253 OR 1179 OR 1628 OR 1822 OR 1870 OR 1918 OR 5567 OR 21726 OR 30476 OR 34679 OR 35967 OR 39000 OR 48823 OR 56594 OR 68899 OR 90588 OR 484398 OR 552670 OR 620463 OR 680407 OR 680408 OR 835852 OR 851527 OR 382216 OR 2417) AND language:(en)'
+}
+====================================================================
+import copy
+import requests
+from datetime import datetime, timedelta
+
+
+def fetch_insights(headers, query_params, p=1):
+    params = copy.deepcopy(query_params)
+    params["page"] = p
+    response = requests.get(
+        "https://api.contify.com/v3/insights", headers=headers, params=params
+    )
+    results = dict()
+    if response.ok:
+        results = response.json()
+    return results
+
+
+headers = {
+    "APPID": "cbd62098",
+    "APPSECRET": "3418bc4f4897637227b1a489b6ca8ff4"
+}
+
+
+req_params = {
+    "start_date": (datetime.now().replace(day=01, month=11, year=2023)).strftime("%Y-%m-%d"),
+    "end_date": (datetime.now().replace(day=30, month=11, year=2023)).strftime("%Y-%m-%d"),
+    "watchlist_id": "58146"
+}
+
+
+channel_id
+active
+published_by_company_id
+penseive_company_not_required
+domain_url
+
+=CONCATENATE(CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 2, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 3, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 4, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 5, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 6, FALSE),CHAR(34)&"
+AND
+"&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 7, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 8, FALSE),CHAR(34)&" OR "&CHAR(34),VLOOKUP(A2, Sheet1!$A$2:$I$162, 9, FALSE),CHAR(34))
+============================
+import copy
+import requests
+from datetime import datetime, timedelta
+
+
+def fetch_insights(headers, query_params, p=1):
+    params = copy.deepcopy(query_params)
+    params["page"] = p
+    response = requests.get(
+        "https://api.contify.com/e/v2/insights", headers=headers, params=params
+    )
+    results = dict()
+    if response.ok:
+        results = response.json()
+    return results
+
+
+headers = {
+    "APPID": "cfy7cc7db2690",
+    "APPSECRET": "88334909607a1598bdf400bf2ab776cfy"
+}
+
+
+req_params = {
+    "start_date": (datetime.now() - timedelta(days=180)).strftime("%Y-%m-%d"),  # with in last 7 days,
+    "tags_id":"859_33952",
+    "advanced_query":"(channel:(2) AND content_type:(24) AND source:(535832))"
+   
+    
+}
+
+results = list()
+page = 1
+
+while page > 0:
+    response = fetch_insights(headers, req_params, page)
+    results.append(response)  # Prepare output as per your requirements
+    if response and response.get("next"):
+        page += 1
+    else:
+        page = 0
+		
+
+
+===========================================================
+db.zips.findOne({})
+
+db.zips.find({state: 'AZ', pop: {$lt: 500}})
+
+db.zips.find({state: 'AZ', pop: {$lt: 500}}, {_id: 0, city: 1})
+
+db.zips.explain().find(
+    { state: "NY", pop: { $gte: 1000, $lte: 5000 }}, 
+    {_id: 0, state: 1, city: 1, pop: 1}
+    ).sort({pop: -1})
+    .limit(10)
+
+
+db.transactions.find({ transaction_count: 66 }, { _id: 0, account_id: 1 });
+
+db.transactions.find({ transaction_count: {$gt: 10, $lt: 100}}, { _id: 0, account_id: 1, transaction_count: 1}).sort({transaction_count: 1}).limit(10)
+
+db.transactions.find({ transaction_count: {$gt: 10, $lt: 100}}, { _id: 0, account_id: 1, transaction_count: 1}).sort({transaction_count: 1}).limit(10)
+
+db.sales.updateOne(
+  { _id: ObjectId("5bd761dcae323e45a93ccab2") },
+  { $set: { storeLocation: "London" } },
+  { upsert: true }
+);
+
+db.sales.updateMany(
+ { purchaseMethod: "Online" },
+  { $set:  { couponUsed: true } }
+);
+
+db.customers.updateMany(
+  { username: "todd60" },
+  { $set: { email: "todd60@gmail.com"} }, { upsert: true }
+)
+
+db.transactions.updateMany(
+  { transaction_count: {$gt: 10, $lt: 20} },
+  { $set: { tier: "Silver"} }
+)
+
+db.sales.deleteMany({ storeLocation: {$in: [ 'Denver', 'New York' ]} });
+db.accounts.deleteMany({ account_id: 604732 })
+
+db.transactions.deleteMany(
+  { transaction_count: { $lt: 5} }
+)
+
+db.transfers.aggregate( [
+    {
+      $lookup:
+        {
+          from: "accounts",
+          localField: "transfer_id",
+          foreignField: "transfers_complete",
+          pipeline: [
+ 
+             { $project: { _id: 0, account_id: 1, account_holder: 1 } }
+          ],
+          as: "account_holder"
+      }
+  }] )
+db.transactions.aggregate([
+  {
+    $lookup: {
+      from: "accounts",
+      localField: "account_id",
+      foreignField: "account_id",
+      as: "account_info",
+    },
+  }
+])
+
+
+# Get reference to 'accounts' collection
+accounts_collection = db.accounts
+
+# Calculate the average balance of checking and savings accounts with balances of less than $1000.
+
+# Select accounts with balances of less than $1000.
+select_by_balance = {"$match": {"balance": {"$lt": 1000}}}
+
+# Separate documents by account type and calculate the average balance for each account type.
+separate_by_account_calculate_avg_balance = {
+    "$group": {"_id": "$account_type", "avg_balance": {"$avg": "$balance"}}
+}
+
+# Create an aggegation pipeline using 'stage_match_balance' and 'stage_group_account_type'.
+pipeline = [
+    select_by_balance,
+    separate_by_account_calculate_avg_balance,
+]
+
+# Perform an aggregation on 'pipeline'.
+results = accounts_collection.aggregate(pipeline)
+
+print()
+print(
+    "Average balance of checking and savings accounts with balances of less than $1000:", "\n"
+)
+
+for item in results:
+    pprint.pprint(item)
+
+client.close()
+# To calculate the balance in GBP, divide the original balance by the conversion rate
+conversion_rate_usd_to_gbp = 1.3
+
+# Select checking accounts with balances of more than $1,500.
+select_accounts = {"$match": {"account_type": "checking", "balance": {"$gt": 1500}}}
+
+# Organize documents in order from highest balance to lowest.
+organize_by_original_balance = {"$sort": {"balance": -1}}
+
+# Return only the account type & balance fields, plus a new field containing balance in Great British Pounds (GBP).
+return_specified_fields = {
+    "$project": {
+        "account_type": 1,
+        "balance": 1,
+        "gbp_balance": {"$divide": ["$balance", conversion_rate_usd_to_gbp]},
+        "_id": 0,
+    }
+}
+
+# Create an aggegation pipeline containing the four stages created above
+pipeline = [
+    select_accounts,
+    organize_by_original_balance,
+    return_specified_fields,
+]
+
+# Perform an aggregation on 'pipeline'.
+results = accounts_collection.aggregate(pipeline)
+
+print(
+    "Account type, original balance and balance in GDP of checking accounts with original balance greater than $1,500,"
+    "in order from highest original balance to lowest: ", "\n"
+)
+
+for item in results:
+    pprint.pprint(item)
+
+client.close()
+
+
+Getting Started with Storage
+Getting Started with Compute
+Getting Started with Networking
+Getting Started with Databases 
+Getting Started with Cloud Operations
+Getting Started with Security
+Getting Started with Serverless
+
