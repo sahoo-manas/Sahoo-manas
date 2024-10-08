@@ -396,6 +396,16 @@ FROM story_manualaction
 WHERE client = 'Contify Central'
   AND (modified_on >= '2024-08-31T00:00:00'
        AND modified_on <='2024-09-07T00:00:00')
+#find the location tag edit
+SELECT story_admin_link,
+       client,
+       category,
+       added,
+       removed
+FROM story_manualaction
+WHERE category ='locations'
+  AND (modified_on >= '2024-10-07T00:00:00'
+       AND modified_on <='2024-10-08T00:00:00') 
        
 --category like 'content_type_id'
 
