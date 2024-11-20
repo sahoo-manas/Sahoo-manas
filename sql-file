@@ -117,6 +117,16 @@ select rf.id from publications_rssfeed as rf
 inner join
 "publications_rssfeed_custom_tags" rfst ON ("rf"."id" = "rfst"."rssfeed_id")
 WHERE (rf.active = True AND rf.show_for_client_id = 102781 AND rfst."customtag_id" = NULL);
+=========================================================
+--this query will return all active rss created for contify central and CT is Newsarticle
+SELECT rf.id,
+       rf.title
+FROM rss_feed_rssfeedsource AS rf
+JOIN rss_feed_rssfeedclienttag AS ct ON (rf.id = ct.rss_source_id)
+JOIN rss_feed_rssfeedstandardtag AS st ON (rf.id = st.rss_source_id)
+WHERE ct.client_id = 82
+  AND st.content_type_id = 3
+  AND rf.state = 0
 
 ******************************************************************************
 
